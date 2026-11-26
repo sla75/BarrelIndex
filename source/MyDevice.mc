@@ -120,13 +120,7 @@ module BarrelIndex {
 
         (:release)
         public function getManufacturerId(id as Number or Null) as Number or Null {
-            if(id!=null && device!=null){
-                var mInfo = device.getManufacturerInfo(id);
-                if (mInfo != null) {
-                    return mInfo.manufacturerId;
-                }
-            }
-            return null;
+            return device.getManufacturerInfo(id);
         }
         
         public static function getBatteryStatusString(status as BatteryStatusValue or Null) as String {
